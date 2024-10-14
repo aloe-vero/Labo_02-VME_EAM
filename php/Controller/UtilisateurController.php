@@ -18,4 +18,13 @@ public function createUtilisateur($nom, $prenom, $mot_de_Passe, $courriel,$nom_u
 
     return $this->model->createUtilisateur($nom, $prenom, $mot_de_Passe, $courriel,$nom_utilisateur,$panier_achat);
 
-}}
+}
+public function updateUtilisateur($id,$nom, $prenom, $mot_de_passe, $courriel,$nom_utilisateur,$panier_achat){
+    return $this->model->updateUtilisateur($id,$nom, $prenom, $mot_de_passe, $courriel,$nom_utilisateur,$panier_achat);
+}
+public function deleteUtilisateur($id){
+    return $this->model->deleteUtilisateur($id);
+}
+
+
+}

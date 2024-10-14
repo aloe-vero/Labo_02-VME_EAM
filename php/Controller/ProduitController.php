@@ -21,5 +21,10 @@ class ProduitController
         return $this->model->createProduit($type, $image, $description, $prix, $taille, $couleur);
 
     }
-
+    public function updateProduit($id, $image, $description, $prix, $taille, $couleur){
+        return $this->model->updateProduit($id,$image,$description,$prix,$taille,$couleur);
+    }
+    public function deleteProduit($id){
+        return $this->model->deleteProduit($id);
+    }
 }

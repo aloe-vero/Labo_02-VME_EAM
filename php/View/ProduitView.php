@@ -1,4 +1,3 @@
-<img src=>
 <?php
 
 class ProduitView
@@ -10,7 +9,7 @@ class ProduitView
 
         echo "<table>";
         foreach ($produits as $produit) {
-            echo "<tr><td>{$produit['type']}</td><td><img src={$produit['image']}></td><td>{$produit['description']}</td></tr>";
+            echo "<tr><td>{$produit['id']}</td><td>{$produit['type']}</td><td>{$produit['image']}</td><td>{$produit['description']}</td></tr>";
         }
         echo "</table>";
 
