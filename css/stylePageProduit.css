@@ -1,0 +1,148 @@
+html,
+body {
+  height: 100%;
+  margin: 0px;
+}
+
+html {
+  background: url(../img/web/BackgroundUnicornv2.svg) no-repeat center center
+    fixed;
+  background-size: cover;
+  height: 100%;
+  cursor: url(../img/web/pink_unicorn_neon.png), auto;
+}
+
+a {
+  cursor: url(../img/web/purple_unicorn_neon.png), auto;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 0px;
+  padding: 0px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  background-color: #800796;
+}
+
+nav > a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #ff71ce;
+  margin: 2px;
+  padding: 15px 56px;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 3px 4px 0 #b967ff;
+}
+
+nav > a:hover {
+  text-shadow: 1px 2px 0 #b967ff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(58, 5, 72, 0.6);
+  width: 65%;
+}
+
+.imagesProduit {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+.imagesProduit > img {
+  width: 450px;
+  height: 480px;
+}
+
+.sousImagesProduit {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+.sousImagesProduit > img {
+  width: 150px;
+  height: 180px;
+  margin: 10px;
+  cursor: url(../img/web/purple_unicorn_neon.png), auto;
+}
+
+.sousImagesProduit > img:first-child {
+  margin-left: 0px;
+}
+
+.containerProduit {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  width: 95%;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  color: #fffb96;
+}
+
+.grandeLettre {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-top: 15px;
+}
+
+#prix {
+  font-weight: 200;
+  font-size: 1.2rem;
+}
+
+.petiteLettre {
+  font-size: 1.5rem;
+}
+
+p {
+  margin: 10px;
+  margin-left: 25px;
+  margin-top: 5px;
+  padding: 0px;
+}
+
+ul {
+  list-style-image: url(../img/web/rainbow.png);
+}
+
+li {
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #800796;
+  color: #ff71ce;
+  width: 100%;
+}

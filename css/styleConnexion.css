@@ -1,0 +1,130 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  background: url(../img/web/BackgroundUnicornv2.svg) no-repeat center center
+    fixed;
+  background-size: cover;
+  height: 100%;
+  cursor: url(../img/web/pink_unicorn_neon.png), auto;
+}
+
+a {
+  cursor: url(../img/web/purple_unicorn_neon.png), auto;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  background-color: #800796;
+}
+
+nav > a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #ff71ce;
+  margin: 2px;
+  padding: 15px 56px;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 3px 4px 0 #b967ff;
+}
+
+nav > a:hover {
+  text-shadow: 1px 2px 0 #b967ff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(58, 5, 72, 0.6);
+  width: 65%;
+}
+
+.connexion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-width: 100px;
+  border-image: url(../img/web/pale_glowing_pink_blue_border.png) 25% stretch;
+  border-style: solid;
+  height: 330px;
+  width: 530px;
+  margin: 15px;
+}
+
+#titre {
+  font-size: 2rem;
+  color: #ff71ce;
+  margin: 2px;
+  padding: 15px 56px;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 3px 4px 0 #b967ff;
+}
+
+#mdp,
+#email {
+  height: 30px;
+  width: 300px;
+  padding-left: 10px;
+  margin: 15px;
+}
+
+input:hover {
+  cursor: url(../img/web/purple_unicorn_neon.png), auto;
+}
+
+#buttonInscription,
+#buttonConnexion {
+  height: 34px;
+  width: 100px;
+  margin-left: 10px;
+  background-color: #b967ff;
+  border-radius: 8px;
+  border: 2px solid black;
+  box-shadow: 6px 6px black;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#buttonInscription:hover,
+#buttonConnexion:hover {
+  box-shadow: 2px 2px black;
+  cursor: url(../img/web/purple_unicorn_neon.png), auto;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #800796;
+  color: #ff71ce;
+  width: 100%;
+}
