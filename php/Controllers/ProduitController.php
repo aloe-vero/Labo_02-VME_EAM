@@ -1,5 +1,5 @@
 <?php
-require_once 'php/Models/ProduitModel.php';
+require_once __DIR__ .'/../Models/ProduitModel.php';
 
 class ProduitController
 {
@@ -18,6 +18,9 @@ class ProduitController
 
     public function getProduitByType($type){
         return $this->model->getProduitByType($type);
+    }
+    public function getProduitById($id){
+        return $this->model->getProduitById($id);
     }
     public function createProduit($type, $image, $description, $prix, $taille, $couleur)
     {

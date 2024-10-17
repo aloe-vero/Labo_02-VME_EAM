@@ -1,5 +1,5 @@
 <?php
-require_once "php/Models/AbonnementModel.php";
+require_once __DIR__ ."/../Models/AbonnementModel.php";
 class AbonnementController {
 
     private $model;

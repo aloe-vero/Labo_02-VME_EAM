@@ -15,11 +15,10 @@ class AbonnementModel {
 
     }
 
-    public function createAbonnement($courriel, $utilisateur_id, $est_abonnee) {
-        $sql = "INSERT INTO abonnements (courriel, utilisateur_id, est_abonnee) VALUES (:courriel, :utilisateur_id, :est_abonnee)";
+    public function createAbonnement($courriel, $est_abonnee) {
+        $sql = "INSERT INTO abonnements (courriel,est_abonnee) VALUES (:courriel, :est_abonnee)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':courriel', $courriel, PDO::PARAM_STR);
-        $stmt->bindValue(':utilisateur_id', $utilisateur_id, PDO::PARAM_STR);
         $stmt->bindValue(':est_abonnee', $est_abonnee, PDO::PARAM_BOOL);
         return $stmt->execute();
     }

@@ -7,11 +7,16 @@ class ProduitView
     public function displayProduits($produits)
     {
 
-        echo "<table>";
         foreach ($produits as $produit) {
-            echo "<tr><td>{$produit['id']}</td><td>{$produit['type']}</td><td>{$produit['image']}</td><td>{$produit['description']}</td></tr>";
+            echo "<div class='carte'><img src={$produit['image']} ><p>{$produit['description']}</p></div>";
         }
-        echo "</table>";
+
+    }
+
+    public function displayProduit($produits){
+        foreach ($produits as $produit) {
+        echo "<div class='carte'><img src={$produit['image']} ><p>{$produit['description']}</p><p>{$produit['taille']}</p><p>{$produit['type']}</p><p>{$produit['prix']}</p><p>{$produit['couleur']}</p></div>";
+    }
 
     }
 

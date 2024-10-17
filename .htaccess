@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /Labo_02/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ /Labo_02/index.php [QSA,L]

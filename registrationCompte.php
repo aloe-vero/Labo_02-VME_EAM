@@ -21,7 +21,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit();
 }
 else {
-    $uc ->createUtilisateur($nom, $prenom, $password, $email);
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $uc ->createUtilisateur($nom, $prenom, $hash, $email);
 
 
 }

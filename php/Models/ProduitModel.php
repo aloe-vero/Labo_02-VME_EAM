@@ -14,6 +14,22 @@ class ProduitModel
                 return $result->fetchAll(PDO::FETCH_ASSOC);
         }
 
+        public function getProduitByType($type){
+        $sql = "SELECT * FROM `produits` WHERE `type` = :type;";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':type', $type, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function getProduitById($id){
+
+            $sql = "SELECT * FROM `produits` WHERE `id` = :id;";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
         public function createProduit($type, $image, $description, $prix, $taille, $couleur)
         {
                 $sql = "INSERT INTO produits (type, image, description,prix,taille,couleur) VALUES (:type, :image, :description,:prix,:taille,:couleur)";

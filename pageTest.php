@@ -1,16 +1,16 @@
 <?php
 // Test 01
-require_once 'php/View/ProduitView.php';
-require_once 'php/Controller/ProduitController.php';
-
-require_once 'php/View/UtilisateurView.php';
-require_once 'php/Controller/UtilisateurController.php';
-
-require_once 'php/Controller/AbonnementController.php';
-require_once 'php/View/AbonnementView.php';
-
-
-$database = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root');
+//require_once 'php/Views/ClassView/ProduitView.php';
+//require_once 'php/Controllers/ProduitController.php';
+//
+//require_once 'php/Views/ClassView/UtilisateurView.php';
+//require_once 'php/Controllers/AbonnementController.php';
+//
+//require_once 'php/Controllers/AbonnementController.php';
+//require_once 'php/Views/ClassView/AbonnementView.php';
+//
+//
+//$database = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root');
 
 //$produitController = new ProduitController($database);
 //$produitView = new ProduitView();
@@ -18,7 +18,7 @@ $database = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root
 //$produitController->createProduit("Chemise", "img/tshirt1.webp", "Une chemise", "10", "30", "Rouge");
 //$produits = $produitController->getAllProduits();
 //$produitView->displayProduits($produits);
-//$produitController->updateProduit(70, "img.png", "UNE CHEMISE QUI EST GAY", "1000.000", "45", "BLEU")
+//$produitController->updateProduit(70, "img.png", "UN Y", "1000.000", "45", "BLEU")
 //$produitController->deleteProduit("66");
 
 //echo "<p>Utilisateurs</p>";
@@ -48,4 +48,5 @@ $database = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root
 //$abonnementView->displayAbonnements($abonnements);
 //
 
+?>
 

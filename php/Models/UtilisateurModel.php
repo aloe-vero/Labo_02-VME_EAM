@@ -13,27 +13,34 @@ class UtilisateurModel {
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function createUtilisateur($nom, $prenom, $mot_de_passe, $courriel,$nom_utilisateur) {
-        $sql = "INSERT INTO utilisateurs (nom, prenom, mot_de_passe,courriel,nom_utilisateur) VALUES (:nom , :prenom, :mot_de_passe,:courriel,:nom_utilisateur,)";
+    public function getUtilisateurByCourriel($courriel) {
+        $sql = "SELECT * FROM `utilisateurs` WHERE courriel = :courriel";
+        $result = $this->db->prepare($sql);
+        $result->execute(["courriel" => $courriel]);
+        return $result->fetch(PDO::FETCH_ASSOC);
+
+    }
+    public function createUtilisateur($nom, $prenom, $password, $courriel) {
+        $sql = "INSERT INTO utilisateurs (nom, prenom, password,courriel) VALUES (:nom , :prenom, :password,:courriel)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':nom',$nom, PDO::PARAM_STR);
         $stmt->bindValue(':prenom', $prenom, PDO::PARAM_STR);
-        $stmt->bindValue(':mot_de_passe', $mot_de_passe, PDO::PARAM_STR);
+        $stmt->bindValue(':password', $password, PDO::PARAM_STR);
         $stmt->bindValue(':courriel', $courriel, PDO::PARAM_STR);
-        $stmt->bindValue(':nom_utilisateur', $nom_utilisateur, PDO::PARAM_STR);
+
         return $stmt->execute();
 
     }
 
-    public function updateUtilisateur($id,$nom, $prenom, $mot_de_passe, $courriel,$nom_utilisateur) {
-        $sql = "UPDATE utilisateurs SET nom = :nom, prenom = :prenom, mot_de_passe= :mot_de_passe, courriel = :courriel, nom_utilisateur = :nom_utilisateur WHERE id = :id";
+    public function updateUtilisateur($id,$nom, $prenom, $password, $courriel) {
+        $sql = "UPDATE utilisateurs SET nom = :nom, prenom = :prenom, password= :password, courriel = :courriel WHERE id = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->bindValue(':nom', $nom, PDO::PARAM_STR);
         $stmt->bindValue(':prenom', $prenom, PDO::PARAM_STR);
-        $stmt->bindValue(':mot_de_passe', $mot_de_passe, PDO::PARAM_STR);
+        $stmt->bindValue(':password', $password, PDO::PARAM_STR);
         $stmt->bindValue(':courriel', $courriel, PDO::PARAM_STR);
-        $stmt->bindValue(':nom_utilisateur', $nom_utilisateur, PDO::PARAM_STR);
+
 
         return $stmt->execute();
     }
