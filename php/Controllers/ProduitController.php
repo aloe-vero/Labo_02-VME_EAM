@@ -16,6 +16,9 @@ class ProduitController
         return $this->model->getAllProduits();
     }
 
+    public function getProduitByType($type){
+        return $this->model->getProduitByType($type);
+    }
     public function createProduit($type, $image, $description, $prix, $taille, $couleur)
     {
         return $this->model->createProduit($type, $image, $description, $prix, $taille, $couleur);

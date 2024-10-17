@@ -15,8 +15,8 @@ class AbonnementController {
         return $this->model->getAllAbonnements();
     }
 
-    public function createAbonnement($courriel, $utilisateur_id, $est_abonnee){
-        return $this->model->createAbonnement($courriel, $utilisateur_id, $est_abonnee);
+    public function createAbonnement($courriel, $est_abonnee){
+        return $this->model->createAbonnement($courriel, $est_abonnee);
     }
 
 
