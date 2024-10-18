@@ -50,5 +50,3 @@
 //$abonnementView->displayAbonnements($abonnements);
 //
 
-?>
-
