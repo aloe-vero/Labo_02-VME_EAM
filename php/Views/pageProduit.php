@@ -1,17 +1,15 @@
 <?php
-
-$id = $_GET['id'];
 $database = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root');
 require "../Controllers/ProduitController.php";
 require "ClassView/ProduitView.php";
 $produitController = new ProduitController($database);
 $produitView = new ProduitView();
-$produit = $produitController->getProduitById($id);
 
-
-
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $produits = $produitController->getProduitById($id);
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +25,9 @@ $produit = $produitController->getProduitById($id);
     <div class="container">
         <?php include 'partials/header.php'; ?>
         <div class="containerProduit">
-    <?php $produitView->displayProduit($produit); ?>
+            <?php
+            $produitView->displayProduit($produits)
+            ?>
         </div>
         <?php include 'partials/footer.php'; ?>
     </div>

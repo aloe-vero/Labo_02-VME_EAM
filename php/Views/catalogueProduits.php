@@ -4,8 +4,6 @@ require "../Controllers/ProduitController.php";
 require "ClassView/ProduitView.php";
 $produitController = new ProduitController($database);
 $produitView = new ProduitView();
-
-
 ?>
 
 <!DOCTYPE html>

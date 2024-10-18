@@ -4,7 +4,7 @@ class ProduitView
 {
 
 
-    public function displayProduitDetails($produits)
+    public function displayProduitsDetails($produits)
     {
 
         foreach ($produits as $produit) {
@@ -20,7 +20,7 @@ class ProduitView
     public function displayProduitsImage($produits)
     {
         foreach ($produits as $produit) {
-            echo "<img src={$produit['image']} alt={$produit['description']} onclick='location.href=\"pageProduit.php?id={$produit['id']}\"'>";
+            echo "<img src={$produit['image']} alt={$produit['description']} >";
         }
     }
     public function displayProduit($produits){
