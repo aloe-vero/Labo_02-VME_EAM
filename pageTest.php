@@ -1,5 +1,5 @@
 <?php
-// Test 01
+//
 //require_once 'php/Views/ClassView/ProduitView.php';
 //require_once 'php/Controllers/ProduitController.php';
 //
@@ -11,13 +11,15 @@
 //
 //
 //$database = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root');
-
+//
 //$produitController = new ProduitController($database);
 //$produitView = new ProduitView();
 //echo "<p>Produits</p>";
+//$produits = $produitController->getProduitById(4);
+//$produitView ->displayProduitsImage($produits, "php/Views/pageProduit.php");
+
 //$produitController->createProduit("Chemise", "img/tshirt1.webp", "Une chemise", "10", "30", "Rouge");
-//$produits = $produitController->getAllProduits();
-//$produitView->displayProduits($produits);
+//$produitView->displayProduit($produits);
 //$produitController->updateProduit(70, "img.png", "UN Y", "1000.000", "45", "BLEU")
 //$produitController->deleteProduit("66");
 

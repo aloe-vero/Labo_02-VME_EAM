@@ -24,7 +24,7 @@ $produitView = new ProduitView();
           <?php
           $produits = $produitController->getAllProduits();
 
-          $produitView->displayProduitsDetails($produits);
+          $produitView->displayProduitDetails($produits);
           ?>
         </div>
         <?php include 'partials/footer.php'; ?>
