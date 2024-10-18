@@ -16,7 +16,7 @@
     <a href="connexion.php" class="material-symbols-outlined">
     account_circle
     </a>
-    <img id="logo" src="../../../img/web/logov23749802.png" alt="logo Rich Ricasso" width="500" height="220">
+    <img id="logo" src="../../img/web/logov23749802.png" alt="logo Rich Ricasso" width="500" height="220">
     <nav>
         <a href="home.php">Accueil</a>
         <a href="catalogueProduits.php">Produits</a>
