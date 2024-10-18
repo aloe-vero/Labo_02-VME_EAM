@@ -1,3 +1,16 @@
+<?php
+$database = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root');
+require "../Controllers/ProduitController.php";
+require "ClassView/ProduitView.php";
+$produitController = new ProduitController($database);
+$produitView = new ProduitView();
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $produits = $produitController->getProduitById($id);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,24 +25,9 @@
     <div class="container">
         <?php include 'partials/header.php'; ?>
         <div class="containerProduit">
-            <div class="imagesProduit">
-                <img id="productImageMain" src="../../img/produits/shirt1.webp" alt="polo licornes">
-                <div class="sousImagesProduit">
-                    <img src="../../img/produits/shirt1.webp" alt="polo licornes" class="imageList">
-                    <img src="../../img/produits/tie3.webp" alt="polo licornes" class="imageList">
-                </div>
-            </div>
-            <div class="description">
-                <p class="grandeLettre">DESCRIPTION</p>
-                <p id="prix">PRIX</p>
-                <ul class="petiteLettre">
-                    <li>DESCRIPTION</li>
-                    <li>DESCRIPTION</li>
-                    <li>DESCRIPTION</li>
-                    <li>DESCRIPTION</li>
-                    <li>DESCRIPTION</li>
-                </ul>
-            </div>
+            <?php
+            $produitView->displayProduit($produits)
+            ?>
         </div>
         <?php include 'partials/footer.php'; ?>
     </div>
