@@ -1,50 +1,77 @@
+<?php
+session_start();
+
+?>
+
+
+<p><a href="php/Views/home.php">Site</a></p>
+<p><a href="pageTest.php">Page Test</a></p>
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .carte{
+            display: flex;
+            border: 1px solid black;
+            width: 200px;
+            height: 300px;
+            flex-direction: column;
+            align-items: center ;
+        }
+        img{
+            width: 200px;
+        }
+
+        .p1, .p2{
+            display: flex;
+            flex-direction: row;
+
+        }
+    </style>
+</head>
+<body>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styleIndex.css?v=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Rich Ricasso</title>
+    <title>Formulaire d'inscription</title>
 </head>
 <body>
-    <div class="container">
-        <?php include 'header.php'; ?>
-        <div class="introduction">
-            <img src="img/web/rich.png" alt="Rich Ricasso" width="300" height="300">
-            <div class="window">
-                <p>I'm baby ascot austin hashtag, kombucha literally street art listicle williamsburg asymmetrical hoodie bicycle rights 90's. Ennui kale chips keytar bodega boys celiac. Crucifix distillery pug next level ennui bicycle rights church-key actually kombucha normcore shoreditch. Ethical banjo master cleanse ramps, fanny pack glossier synth ugh austin distillery lumbersexual neutral milk hotel tbh.</p>
-                <p>Typewriter brunch flannel copper mug, viral crucifix yr +1 gluten-free pug ethical lomo williamsburg. Quinoa coloring book DSA, big mood vape polaroid readymade. Migas jean shorts la croix, af chartreuse farm-to-table wolf squid tilde direct trade aesthetic. Retro PBR&B tumblr palo santo twee succulents fixie shoreditch chicharrones pabst.</p>
-            </div>
-        </div>
-        <div class="carrousel">
-            <img src="img/produits/tieX.webp" alt="cravate licorne">
-            <img src="img/produits/tshirt1.webp" alt="t-shirt licorne">
-            <img src="img/produits/tshirt4.webp" alt="t-shirt landscape">
-            <img src="img/produits/tie5.webp" alt="cravate a motifs">
-            <img src="img/produits/tieX.webp" alt="cravate licorne">
-            <img src="img/produits/tshirt1.webp" alt="t-shirt licorne">
-            <img src="img/produits/tshirt4.webp" alt="t-shirt landscape">
-            <img src="img/produits/tie5.webp" alt="cravate a motifs">
-            <img src="img/produits/tieX.webp" alt="cravate licorne">
-            <img src="img/produits/tshirt1.webp" alt="t-shirt licorne">
-            <img src="img/produits/tshirt4.webp" alt="t-shirt landscape">
-            <img src="img/produits/tie5.webp" alt="cravate a motifs">
-        </div>
-        <div class="summerCollection">
-            <p>Lookbook Été 2024</p>
-            <div class="piecesPhares">
-                <img src="img/produits/shirt1.webp" alt="polo licorne" width="350" height="380">
-                <img src="img/produits/tshirt5.webp" alt="t-shirt landscape" width="350" height="380">
-                <img src="img/produits/tshirt2.webp" alt="t-shirt landscape" width="350" height="380">
-                <img src="img/produits/tshirt1.webp" alt="polo licorne" width="350" height="380">
-                <img src="img/produits/tshirt3.webp" alt="t-shirt landscape" width="350" height="380">
-                <img src="img/produits/tshirt6.webp" alt="t-shirt landscape" width="350" height="380">
-            </div>
-        </div>
-        <?php include 'footer.php'; ?>
-    </div>
+<form action="registrationCompte.php" method="POST">
+    <label for="prenom">Prénom:</label>
+    <input type="text" id="prenom" name="prenom">
+    <br>
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" name="nom">
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <br>
+    <input type="submit" value="S'inscrire">
+</form>
+
+<form action="inscrireInfolettre.php" method="POST">
+    <label for="">S'inscrire à notre infolettre?</label>
+    <input type="email" id="email" name="email">
+    <input type="submit" value="S'inscrire">
+</form>
+
 </body>
 </html>
 
+
+
+</body>
+</html>
 

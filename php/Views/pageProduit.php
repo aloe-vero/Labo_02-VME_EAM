@@ -1,55 +1,37 @@
-<?php
-
-require_once __DIR__ . "/../Views/ClassView/ProduitView.php";
-require_once __DIR__ . "/../Controllers/ProduitController.php";
-
-?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .carte{
-            display: flex;
-            border: 1px solid black;
-            width: 200px;
-            height: 500px;
-            flex-direction: column;
-            align-items: center ;
-        }
-        img{
-            width: 200px;
-        }
-
-        .p1{
-            display: flex;
-            flex-direction: row;
-
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/stylePageProduit.css?v=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="../../js/script.js"></script>
+    <title>Rich Ricasso</title>
 </head>
 <body>
-
-<p>Hello</p>
-<div class = "p1">
-<?php
-$database = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root');
-
-$produitController = new ProduitController($database);
-$produitView = new ProduitView();
-//$produits = $produitController->getAllProduits();
-$produits = $produitController->getProduitById(17);
-$produitView->displayProduit($produits);
-//$produitView->displayProduits($produits);
-
-?>
-
-</div>
-
-
+    <div class="container">
+        <?php include 'partials/header.php'; ?>
+        <div class="containerProduit">
+            <div class="imagesProduit">
+                <img id="productImageMain" src="../../img/produits/shirt1.webp" alt="polo licornes">
+                <div class="sousImagesProduit">
+                    <img src="../../img/produits/shirt1.webp" alt="polo licornes" class="imageList">
+                    <img src="../../img/produits/tie3.webp" alt="polo licornes" class="imageList">
+                </div>
+            </div>
+            <div class="description">
+                <p class="grandeLettre">DESCRIPTION</p>
+                <p id="prix">PRIX</p>
+                <ul class="petiteLettre">
+                    <li>DESCRIPTION</li>
+                    <li>DESCRIPTION</li>
+                    <li>DESCRIPTION</li>
+                    <li>DESCRIPTION</li>
+                    <li>DESCRIPTION</li>
+                </ul>
+            </div>
+        </div>
+        <?php include 'partials/footer.php'; ?>
+    </div>
 </body>
 </html>
