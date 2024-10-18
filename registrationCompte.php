@@ -23,8 +23,6 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 else {
     $hash = password_hash($password, PASSWORD_DEFAULT);
     $uc ->createUtilisateur($nom, $prenom, $hash, $email);
-
-
 }
 
 // Enregistrer les données dans une base de données MySQL

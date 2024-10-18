@@ -26,6 +26,7 @@ class ProduitView
     public function displayProduit($produits){
         foreach ($produits as $produit) {
         echo "<div class=\"imagesProduit\">
+        <p><a href='home.php'>Accueil</a> / <a href='catalogueProduits.php'>Produits</a> / {$produit['description']} </p>
     <img id=\"productImageMain\" src=\"../../img/produits/shirt1.webp\" alt=\"polo licornes\">
     <div class=\"sousImagesProduit\">
         <img src={$produit['image']} alt=\"polo licornes\" class=\"imageList\">

@@ -76,6 +76,15 @@ nav > a:hover {
   height: 480px;
 }
 
+.imagesProduit > p {
+  color: #fffb96;
+}
+
+.imagesProduit > p > a {
+  color: #fffb96;
+  text-decoration: none;
+}
+
 .sousImagesProduit {
   display: flex;
   flex-direction: row;
@@ -105,12 +114,12 @@ nav > a:hover {
   flex-direction: column;
   margin-left: 30px;
   color: #fffb96;
+  margin-top: 58px;
 }
 
 .grandeLettre {
   font-weight: 600;
   font-size: 2rem;
-  margin-top: 15px;
 }
 
 #prix {
@@ -122,7 +131,7 @@ nav > a:hover {
   font-size: 1.5rem;
 }
 
-p {
+.description > p {
   margin: 10px;
   margin-left: 25px;
   margin-top: 5px;
