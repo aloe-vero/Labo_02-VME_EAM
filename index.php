@@ -47,7 +47,7 @@ session_start();
     <title>Formulaire d'inscription</title>
 </head>
 <body>
-<form action="registrationCompte.php" method="POST">
+<form action="php/registrationCompte.php" method="POST">
     <label for="prenom">Prénom:</label>
     <input type="text" id="prenom" name="prenom">
     <br>
@@ -63,7 +63,7 @@ session_start();
     <input type="submit" value="S'inscrire">
 </form>
 
-<form action="inscrireInfolettre.php" method="POST">
+<form action="php/inscrireInfolettre.php" method="POST">
     <label for="">S'inscrire à notre infolettre?</label>
     <input type="email" id="email" name="email">
     <input type="submit" value="S'inscrire">
