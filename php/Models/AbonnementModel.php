@@ -15,20 +15,27 @@ class AbonnementModel {
 
     }
 
-    public function createAbonnement($courriel, $est_abonnee) {
-        $sql = "INSERT INTO abonnements (courriel,est_abonnee) VALUES (:courriel, :est_abonnee)";
+    public function getAbonnement($courriel) {
+        $sql = "SELECT * FROM `abonnements` WHERE courriel = :courriel";
+        $result = $this->db->prepare($sql);
+        $result->execute(["courriel" => $courriel]);
+        $abonnement = $result->fetch(PDO::FETCH_ASSOC);
+        
+        return $abonnement !== false ? $abonnement : [];
+    }
+
+    public function createAbonnement($courriel) {
+        $sql = "INSERT INTO abonnements (courriel) VALUES (:courriel)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':courriel', $courriel, PDO::PARAM_STR);
-        $stmt->bindValue(':est_abonnee', $est_abonnee, PDO::PARAM_BOOL);
         return $stmt->execute();
     }
 
-public function updateAbonnement($id,$courriel, $est_abonnee){
-$sql = "UPDATE abonnements SET courriel = :courriel,est_abonnee = :est_abonnee WHERE id = :id ";
+public function updateAbonnement($id,$courriel){
+$sql = "UPDATE abonnements SET courriel = :courriel  WHERE id = :id ";
 $stmt = $this->db->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->bindValue(":courriel", $courriel, PDO::PARAM_STR);
-$stmt->bindValue(":est_abonnee", $est_abonnee,PDO::PARAM_BOOL);
 return $stmt->execute();
 }
 

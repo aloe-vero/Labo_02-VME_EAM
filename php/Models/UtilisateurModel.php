@@ -17,8 +17,9 @@ class UtilisateurModel {
         $sql = "SELECT * FROM `utilisateurs` WHERE courriel = :courriel";
         $result = $this->db->prepare($sql);
         $result->execute(["courriel" => $courriel]);
-        return $result->fetch(PDO::FETCH_ASSOC);
-
+        $user = $result->fetch(PDO::FETCH_ASSOC);
+        
+        return $user !== false ? $user : [];
     }
     public function createUtilisateur($nom, $prenom, $password, $courriel) {
         $sql = "INSERT INTO utilisateurs (nom, prenom, password,courriel) VALUES (:nom , :prenom, :password,:courriel)";

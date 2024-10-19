@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,18 +14,27 @@
         <div class="connexion">
             <p id="titre">CRÉER UN COMPTE</p>
             <form action="../registrationCompte.php" id="connexionForm" method="POST">
-                <input id="prenom" name="prenom" type="text" placeholder="PRENOM">
+                <input id="prenom" name="prenom" type="text" placeholder="PRENOM" value="<?php echo $_SESSION['old']['prenom'] ?? ''; ?>">
+                <span style="color:red"><?php echo $_SESSION['errors']['prenom'] ?? ''; ?></span>
                 <br>
-                <input id="nomDeFamille" name="nomDeFamille" type="text" placeholder="NOM DE FAMILLE">
+                <input id="nomDeFamille" name="nomDeFamille" type="text" placeholder="NOM DE FAMILLE" value="<?php echo $_SESSION['old']['nomDeFamille'] ?? ''; ?>">
+                <span style="color:red"><?php echo $_SESSION['errors']['nom'] ?? ''; ?></span>
                 <br>
-                <input id="email" name="email" type="text" placeholder="COURRIEL">
+                <input id="email" name="email" type="text" placeholder="COURRIEL" value="<?php echo $_SESSION['old']['email'] ?? ''; ?>">
+                <span style="color:red"><?php echo $_SESSION['errors']['email'] ?? ''; ?></span>
                 <br>
-                <input id="mdp" name="mdp" type="password" placeholder="MOT DE PASSE">
+                <input id="mdp" name="mdp" type="password" placeholder="MOT DE PASSE" value="<?php echo $_SESSION['old']['mdp'] ?? ''; ?>">
+                <span style="color:red"><?php echo $_SESSION['errors']['mdp'] ?? ''; ?></span>
                 <br>
                 <input id="buttonInscription" type="submit" value="S'INSCRIRE">
             </form>
         </div>
         <?php include 'partials/footer.php'; ?>
+        <?php
+        //Effacer les erreurs et les anciennes valeurs après affichage
+        if (isset($_SESSION['errors'])) unset($_SESSION['errors']);
+        if (isset($_SESSION['old'])) unset($_SESSION['old']);
+         ?>
     </div>
 </body>
 </html>
