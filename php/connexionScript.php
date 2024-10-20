@@ -1,10 +1,9 @@
 <?php
-session_start();
-$conn = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root');
-$email = $_POST['email'];
-$password = $_POST['mdp'];
-
+require_once "Database.php";
 require "Controllers/UtilisateurController.php";
+$db = Database::getInstance();
+$conn = $db->getConnection();
+
 
 $uc = new UtilisateurController($conn);
 $errors = [];
@@ -14,7 +13,7 @@ if(empty($email)){
 }
 else {
     $utilisateur = $uc->getUtilisateurByCourriel($email);
-    if (!$utilisateur) { 
+    if (!$utilisateur) {
         $errors['email'] = "Vous n'avez pas de compte à cette adresse courriel.";
     }
 }
@@ -29,10 +28,10 @@ if (empty($errors)) {
     if ($utilisateur) {
         header('Location: /Labo_02-VME_EAM_WEB/utilisateur?id='.$utilisateur['id']);}
         exit();
-    }
+
 } else {
     $_SESSION['errors'] = $errors;
     $_SESSION['old'] = $_POST;
-    header("Location: Views/connexion.php");
+    header("Location: /Labo_02-VME_EAM_WEB/connexion");
     exit();
 }

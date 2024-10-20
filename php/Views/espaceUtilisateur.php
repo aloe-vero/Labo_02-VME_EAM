@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "php/Controllers/UtilisateurController.php";
 require "php/Views/ClassView/UtilisateurView.php";
 require_once "php/Database.php";

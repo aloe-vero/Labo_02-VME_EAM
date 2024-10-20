@@ -21,7 +21,7 @@
                 <input id="mdp" name="mdp" type="password" placeholder="MOT DE PASSE" value="<?php echo $_SESSION['old']['mdp'] ?? ''; ?>">
                 <br>
                 <input id="buttonConnexion" type="submit" value="CONNEXION">
-                <button type="button" id="buttonInscription" >S'INSCRIRE</button>
+                <button type="button" id="buttonInscription" onclick="location.href='/Labo_02-VME_EAM_WEB/inscription'" >S'INSCRIRE</button>
             </form>
         </div>
         <?php require 'php/Views/partials/footer.php'; ?>

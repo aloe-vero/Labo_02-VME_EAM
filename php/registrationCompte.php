@@ -1,15 +1,14 @@
 <?php
-session_start();
-$conn = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root');
+include "Database.php";
+include "Controllers/UtilisateurController.php";
+$db = Database::getInstance();
+$conn = $db->getConnection();
+$uc = new UtilisateurController($conn);
+
 $prenom = $_POST['prenom'];
 $nom = $_POST['nomDeFamille'];
 $email = $_POST['email'];
 $password = $_POST['mdp'];
-
-
-require "Controllers/UtilisateurController.php";
-
-$uc = new UtilisateurController($conn);
 $errors = [];
 
 
@@ -30,16 +29,15 @@ if(empty($password)){
     $errors['mdp'] = "Le mot de passe est obligatoire.";
 }
 
-
 if(!empty($errors)){
     $_SESSION['errors'] = $errors;
     $_SESSION['old'] = $_POST;
-    header("Location: Views/inscription.php");
+    header("Location: /Labo_02-VME_EAM_WEB/inscription");
     exit();
 }
 
 //Si pas d'erreur on créer l'utilisateur
-$hash = password_hash($password, PASSWORD_DEFAULT);
-$uc ->createUtilisateur($nom, $prenom, $hash, $email);
+$uc ->createUtilisateur($nom, $prenom, $password, $email);
+
 header("Location: /Labo_02-VME_EAM_WEB/connexion");
-exit();
+echo "toto";

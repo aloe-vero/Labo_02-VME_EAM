@@ -1,6 +1,7 @@
 <?php
-session_start();
-$conn = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root');
+require_once "php/Database.php";
+$db = Database::getInstance();
+$conn = $db->getConnection();
 
 $email = $_POST['email'];
 

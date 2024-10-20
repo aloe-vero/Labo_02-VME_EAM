@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+
+@media screen and (min-width: 1600px) {
+
+
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+}
+
+.texts{
+    height: 94vh;
+    display: flex;
+    background-color: #000;
+    color: #fff;
+    font-weight: 900;
+    font-size: 100px;
+    font-family: "Tourney", sans-serif;
+    mix-blend-mode: exclusion;
+    user-select: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 20px double white;
+
+}
+
+
+
+}@media screen and (max-width: 1599px) {
+
+
+    video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center;
+        object-position: center;
+    }
+
+    .texts{
+        height: 90vh;
+        display: flex;
+        background-color: #000;
+        color: #fff;
+        font-weight: 900;
+        font-size: 100px;
+        font-family: "Tourney", sans-serif;
+        mix-blend-mode: exclusion;
+        user-select: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 20px double white;
+
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+
+    video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center;
+        object-position: center;
+    }
+
+    .texts{
+        height: 85vh;
+        display: flex;
+        background-color: #000;
+        color: #fff;
+        font-weight: 900;
+        font-size: 80px;
+        font-family: "Tourney", sans-serif;
+        mix-blend-mode: exclusion;
+        user-select: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 20px double white;
+
+    }
+}

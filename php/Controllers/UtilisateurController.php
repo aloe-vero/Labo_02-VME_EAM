@@ -20,12 +20,13 @@ public function getAllUtilisateurs(){
 }
 
 public function createUtilisateur($nom, $prenom, $password, $courriel){
-
-    return $this->model->createUtilisateur($nom, $prenom, $password, $courriel);
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    return $this->model->createUtilisateur($nom, $prenom, $hash, $courriel);
 
 }
 public function updateUtilisateur($id,$nom, $prenom, $password, $courriel){
-    return $this->model->updateUtilisateur($id,$nom, $prenom, $password, $courriel);
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    return $this->model->updateUtilisateur($id,$nom, $prenom, $hash, $courriel);
 }
 public function deleteUtilisateur($id){
     return $this->model->deleteUtilisateur($id);
