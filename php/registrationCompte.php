@@ -41,5 +41,5 @@ if(!empty($errors)){
 //Si pas d'erreur on créer l'utilisateur
 $hash = password_hash($password, PASSWORD_DEFAULT);
 $uc ->createUtilisateur($nom, $prenom, $hash, $email);
-header("Location: Views/connexion.php");
+header("Location: /Labo_02-VME_EAM_WEB/connexion");
 exit();

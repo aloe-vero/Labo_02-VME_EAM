@@ -21,6 +21,14 @@ class UtilisateurModel {
         
         return $user !== false ? $user : [];
     }
+
+    public function getUtilisateurById($id) {
+        $sql = "SELECT * FROM `utilisateurs` WHERE id = :id";
+        $result = $this->db->prepare($sql);
+        $result->execute(["id" => $id]);
+
+        return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function createUtilisateur($nom, $prenom, $password, $courriel) {
         $sql = "INSERT INTO utilisateurs (nom, prenom, password,courriel) VALUES (:nom , :prenom, :password,:courriel)";
         $stmt = $this->db->prepare($sql);
@@ -47,9 +55,9 @@ class UtilisateurModel {
     }
 
     public function deleteUtilisateur($id) {
-$sql = "DELETE FROM utilisateurs WHERE id = :id";
-$stmt = $this->db->prepare($sql);
-$stmt->bindParam(":id", $id, PDO::PARAM_STR);
-return $stmt->execute();
+        $sql = "DELETE FROM utilisateurs WHERE id = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":id", $id, PDO::PARAM_STR);
+        return $stmt->execute();
     }
 }

@@ -19,12 +19,13 @@ class AbonnementController {
         return $this->model->getAbonnement($courriel);
     }
 
-    public function createAbonnement($courriel, $est_abonnee){
+    public function createAbonnement($courriel){
         return $this->model->createAbonnement($courriel);
+
     }
 
 
-public function updateAbonnement($id,$courriel, $est_abonnee)
+public function updateAbonnement($id,$courriel)
 {
     return $this->model->updateAbonnement($id, $courriel);
 
