@@ -27,7 +27,7 @@ if (empty($password)) {
 
 if (empty($errors)) {
     if ($utilisateur) {
-        header('Location: Views/espaceUtilisateur.php?id=' . $utilisateur['id']);
+        header('Location: /Labo_02-VME_EAM_WEB/utilisateur?id='.$utilisateur['id']);}
         exit();
     }
 } else {

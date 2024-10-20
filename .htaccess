@@ -1,6 +1,6 @@
 RewriteEngine On
-RewriteBase /Labo_02/
+RewriteBase /Labo_02-VME_EAM_WEB/
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)$ /Labo_02/index.php [QSA,L]
+RewriteRule ^(.+)$ /Labo_02-VME_EAM_WEB/index.php [QSA,L]

@@ -12,7 +12,9 @@ $this->model = new UtilisateurModel($database);
 public function getUtilisateurByCourriel($courriel){
     return $this->model->getUtilisateurByCourriel($courriel);
 }
-
+public function getUtilisateurById($id){
+    return $this->model->getUtilisateurById($id);
+}
 public function getAllUtilisateurs(){
     return $this->model->getAllUtilisateurs();
 }

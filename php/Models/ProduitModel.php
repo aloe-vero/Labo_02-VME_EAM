@@ -14,7 +14,6 @@ class ProduitModel
                 $result = $this->db->query($sql);
                 return $result->fetchAll(PDO::FETCH_ASSOC);
         }
-
         public function getProduitByType($type){
         $sql = "SELECT * FROM `produits` WHERE `type` = :type;";
         $stmt = $this->db->prepare($sql);
@@ -23,8 +22,12 @@ class ProduitModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        public function getProduitById($id){
+        public function getProduitsFiltrer($type,$prix,$taille,$couleur){
 
+
+
+        }
+        public function getProduitById($id){
             $sql = "SELECT * FROM `produits` WHERE `id` = :id;";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_STR);

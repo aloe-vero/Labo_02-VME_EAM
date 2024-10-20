@@ -1,8 +1,11 @@
 <?php
-$database = new PDO('mysql:host=localhost:3306;dbname=boutique_vetements', 'root');
-require "../Controllers/ProduitController.php";
-require "ClassView/ProduitView.php";
-$produitController = new ProduitController($database);
+require "php/Controllers/ProduitController.php";
+require "php/Views/ClassView/ProduitView.php";
+require_once "php/Database.php";
+$db = Database::getInstance();
+$conn = $db->getConnection();
+
+$produitController = new ProduitController($conn);
 $produitView = new ProduitView();
 ?>
 
@@ -11,13 +14,13 @@ $produitView = new ProduitView();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/styleCatalogueProduits.css?v=1" />
+    <link rel="stylesheet" href="css/styleCatalogueProduits.css?v=1" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <title>Produits — Rich Ricasso</title>
 </head>
 <body>
 <div class="container">
-        <?php include 'partials/header.php'; ?>
+    <?php require 'php/Views/partials/header.php'; ?>
         <p id="filtreTitre">Filtrer par</p>
         <div class="filtre">
           <div class="liste">
@@ -73,7 +76,7 @@ $produitView = new ProduitView();
           $produitView->displayProduitsDetails($produits);
           ?>
         </div>
-        <?php include 'partials/footer.php'; ?>
+    <?php require 'php/Views/partials/footer.php'; ?>
     </div>
 </body>
 </html>
