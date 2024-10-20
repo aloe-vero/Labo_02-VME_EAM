@@ -85,11 +85,12 @@ nav > a:hover {
   font-style: italic;
   font-size: 1.3rem;
   font-weight: 600;
+
 }
 
 .filtre {
   display: flex;
-  flex-direction: row;
+  flex-direction: row !important;
   justify-content: start;
   align-items: start;
   width: 100%;

@@ -21,6 +21,7 @@ $produitView = new ProduitView();
 <body>
 <div class="container">
     <?php require 'php/Views/partials/header.php'; ?>
+    <form action="" id="filtreTitre" method="post" >
         <p id="filtreTitre">Filtrer par</p>
         <div class="filtre">
           <div class="liste">
@@ -76,6 +77,7 @@ $produitView = new ProduitView();
           $produitView->displayProduitsDetails($produits);
           ?>
         </div>
+    </form>
     <?php require 'php/Views/partials/footer.php'; ?>
     </div>
 </body>
