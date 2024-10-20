@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/styleInfolettre.css?v=1" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Rich Ricasso</title>
+    <title>Infolettre — Rich Ricasso</title>
 </head>
 <body>
 <div class="container">
@@ -14,14 +14,18 @@
         <div class="infolettreContainer">
             <img src="../../img/produits/shirt1.webp" alt="polo licorne" width="230" height="260">
             <div class="infolettre">
+            <?php if (isset($_SESSION['confirmation'])): ?>
+                <div id="confirmation">
+                    <p><?php echo $_SESSION['confirmation']; ?></p>
+                </div>
+            <?php endif; ?>
+                <br>
                 <p id="lettrePlusGrande">INSCRIS-TOI À NOTRE INFOLETTRE!</p>
                 <P>REÇOIS UN ACCÈS EXCLUSIF POUR NOS NOUVEAUTÉS AINSI QUE DES RABAIS SURPRISE</P>
                 <br>
-                <span><?php echo $_SESSION['confirmation'] ?? ''; ?></span>
-                <br>
                 <form id="infolettreForm" action="../inscrireInfolettre.php" method="POST">
+                    <p class="error"><?php echo $_SESSION['errors'] ?? ''; ?></p>
                     <input id="email" name="email" type="text" placeholder="ADRESSE EMAIL"  value="<?php echo $_SESSION['old']['email'] ?? ''; ?>">
-                    <span style="color:red"><?php echo $_SESSION['errors'] ?? ''; ?></span>
                     <input id="button" type="submit" value="S'INSCRIRE">
                 </form>
             </div>

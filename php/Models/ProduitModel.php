@@ -9,7 +9,8 @@ class ProduitModel
         }
         public function getAllProduits()
         {
-                $sql = "SELECT * FROM `produits`;";
+                $sql = "SELECT * FROM `produits` ORDER BY `produits`.`type` DESC;";
+                //SELECT * FROM `produits` ORDER BY `produits`.`type` ASC
                 $result = $this->db->query($sql);
                 return $result->fetchAll(PDO::FETCH_ASSOC);
         }
@@ -30,11 +31,12 @@ class ProduitModel
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        public function createProduit($type, $image, $description, $prix, $taille, $couleur)
+        public function createProduit($type, $nom, $image, $description, $prix, $taille, $couleur)
         {
-                $sql = "INSERT INTO produits (type, image, description,prix,taille,couleur) VALUES (:type, :image, :description,:prix,:taille,:couleur)";
+                $sql = "INSERT INTO produits (type, nom, image, description,prix,taille,couleur) VALUES (:type, :nom, :image, :description, :prix, :taille, :couleur)";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindValue(':type', $type, PDO::PARAM_STR);
+                $stmt->bindValue(':type', $nom, PDO::PARAM_STR);
                 $stmt->bindValue(':image', $image, PDO::PARAM_STR);
                 $stmt->bindValue(':description', $description, PDO::PARAM_STR);
                 $stmt->bindValue(':prix', $prix, PDO::PARAM_STR);
@@ -43,10 +45,12 @@ class ProduitModel
                 return $stmt->execute();
         }
 
-        public function updateProduit($id, $image, $description, $prix, $taille, $couleur)
+        public function updateProduit($id, $type, $nom, $image, $description, $prix, $taille, $couleur)
         {
-            $sql = "UPDATE produits SET image=:image, description= :description, prix = :prix, taille = :taille, couleur = :couleur WHERE id=:id";
+            $sql = "UPDATE produits SET type=:type, nom=:nom, image=:image, description= :description, prix = :prix, taille = :taille, couleur = :couleur WHERE id=:id";
             $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':type', $type, PDO::PARAM_STR);
+            $stmt->bindValue(':nom', $nom, PDO::PARAM_STR);
             $stmt->bindValue(':image', $image, PDO::PARAM_STR);
             $stmt->bindValue(':description', $description, PDO::PARAM_STR);
             $stmt->bindValue(':prix', $prix, PDO::PARAM_STR);

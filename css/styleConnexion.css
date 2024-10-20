@@ -98,6 +98,14 @@ nav > a:hover {
   margin: 15px;
 }
 
+.error {
+  margin: 0px;
+  padding: 0px;
+  color: red;
+  font-size: 0.8rem;
+  margin-left: 15px;
+}
+
 input:hover {
   cursor: url(../img/web/purple_unicorn_neon.png), auto;
 }

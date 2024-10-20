@@ -97,11 +97,19 @@ nav > a:hover {
   height: 30px;
   width: 300px;
   padding-left: 10px;
-  margin: 15px;
+  margin: 13px;
 }
 
 input:hover {
   cursor: url(../img/web/purple_unicorn_neon.png), auto;
+}
+
+.error {
+  margin: 0px;
+  padding: 0px;
+  color: red;
+  font-size: 0.8rem;
+  margin-left: 15px;
 }
 
 #buttonInscription,

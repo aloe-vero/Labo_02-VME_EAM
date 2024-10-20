@@ -100,6 +100,17 @@ nav > a:hover {
   margin: 15px;
 }
 
+#confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfb9ff;
+  color: white;
+  border: 2px solid white;
+  width: 100%;
+}
+
 .infolettre > p {
   margin: 9px;
   color: #5cf4c6;
@@ -118,6 +129,14 @@ nav > a:hover {
 
 input:hover {
   cursor: url(../img/web/purple_unicorn_neon.png), auto;
+}
+
+.error {
+  margin: 0px;
+  padding: 0px;
+  color: red;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
 }
 
 #button {

@@ -22,13 +22,13 @@ class ProduitController
     public function getProduitById($id){
         return $this->model->getProduitById($id);
     }
-    public function createProduit($type, $image, $description, $prix, $taille, $couleur)
+    public function createProduit($type, $nom, $image, $description, $prix, $taille, $couleur)
     {
-        return $this->model->createProduit($type, $image, $description, $prix, $taille, $couleur);
+        return $this->model->createProduit($type, $nom, $image, $description, $prix, $taille, $couleur);
 
     }
-    public function updateProduit($id, $image, $description, $prix, $taille, $couleur){
-        return $this->model->updateProduit($id,$image,$description,$prix,$taille,$couleur);
+    public function updateProduit($id, $type, $nom, $image, $description, $prix, $taille, $couleur){
+        return $this->model->updateProduit($id, $type, $nom, $image,$description,$prix,$taille, $couleur);
     }
     public function deleteProduit($id){
         return $this->model->deleteProduit($id);

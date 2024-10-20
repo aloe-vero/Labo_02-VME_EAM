@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/styleInscription.css?version=1" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Rich Ricasso</title>
+    <title>Inscription — Rich Ricasso</title>
 </head>
 <body>
     <div class="container">
@@ -14,17 +14,17 @@
         <div class="connexion">
             <p id="titre">CRÉER UN COMPTE</p>
             <form action="../registrationCompte.php" id="connexionForm" method="POST">
+                <p class="error"><?php echo $_SESSION['errors']['prenom'] ?? ''; ?></p>
                 <input id="prenom" name="prenom" type="text" placeholder="PRENOM" value="<?php echo $_SESSION['old']['prenom'] ?? ''; ?>">
-                <span style="color:red"><?php echo $_SESSION['errors']['prenom'] ?? ''; ?></span>
                 <br>
+                <p class="error"><?php echo $_SESSION['errors']['nom'] ?? ''; ?></p>
                 <input id="nomDeFamille" name="nomDeFamille" type="text" placeholder="NOM DE FAMILLE" value="<?php echo $_SESSION['old']['nomDeFamille'] ?? ''; ?>">
-                <span style="color:red"><?php echo $_SESSION['errors']['nom'] ?? ''; ?></span>
                 <br>
-                <input id="email" name="email" type="text" placeholder="COURRIEL" value="<?php echo $_SESSION['old']['email'] ?? ''; ?>">
-                <span style="color:red"><?php echo $_SESSION['errors']['email'] ?? ''; ?></span>
+                <p class="error"><?php echo $_SESSION['errors']['email'] ?? ''; ?></p>
+                <input id="email" name="email" type="text" placeholder="ADRESSE COURRIEL" value="<?php echo $_SESSION['old']['email'] ?? ''; ?>">
                 <br>
+                <p class="error"><?php echo $_SESSION['errors']['mdp'] ?? ''; ?></p>
                 <input id="mdp" name="mdp" type="password" placeholder="MOT DE PASSE" value="<?php echo $_SESSION['old']['mdp'] ?? ''; ?>">
-                <span style="color:red"><?php echo $_SESSION['errors']['mdp'] ?? ''; ?></span>
                 <br>
                 <input id="buttonInscription" type="submit" value="S'INSCRIRE">
             </form>

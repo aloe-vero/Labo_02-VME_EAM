@@ -19,7 +19,7 @@ if(isset($_GET['id'])){
     <link rel="stylesheet" href="../../css/stylePageProduit.css?v=1" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <script src="../../js/script.js"></script>
-    <title>Rich Ricasso</title>
+    <title><?php echo $produits[0]["description"]; ?> — Rich Ricasso</title>
 </head>
 <body>
     <div class="container">
