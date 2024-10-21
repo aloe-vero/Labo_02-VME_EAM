@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "php/Controllers/UtilisateurController.php";
 require "php/Views/ClassView/UtilisateurView.php";
 require_once "php/Database.php";
@@ -13,8 +14,6 @@ if(isset($_GET['id'])){
     $id = $_GET['id'];
     $_SESSION['id'] = $id;
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +28,7 @@ if(isset($_GET['id'])){
 <body>
 <div class="container">
     <?php require 'php/Views/partials/header.php'; ?>
-        <form class="connexion" action="php/modificationUser.php" method="post">
+        <form class="connexion" action="php/Forms/modifierUser.php" method="post">
           <?php
 
 

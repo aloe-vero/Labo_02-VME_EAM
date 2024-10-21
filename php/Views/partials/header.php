@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php //session_start(); ?>
 <style>
  .material-symbols-outlined {
   color: #b967ff;

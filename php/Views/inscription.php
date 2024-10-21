@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,7 +15,7 @@
         <?php require 'php/Views/partials/header.php'; ?>
         <div class="connexion">
             <p id="titre">CRÉER UN COMPTE</p>
-            <form action="php/registrationCompte.php" id="connexionForm" method="POST">
+            <form action="php/Forms/registrationUser.php" id="connexionForm" method="POST">
                 <p class="error"><?php echo $_SESSION['errors']['prenom'] ?? ''; ?></p>
                 <input id="prenom" name="prenom" type="text" placeholder="PRENOM" value="<?php echo $_SESSION['old']['prenom'] ?? ''; ?>">
                 <br>

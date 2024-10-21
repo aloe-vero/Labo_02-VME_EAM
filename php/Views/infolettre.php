@@ -1,4 +1,4 @@
-
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,7 +23,7 @@
                 <p id="lettrePlusGrande">INSCRIS-TOI À NOTRE INFOLETTRE!</p>
                 <P>REÇOIS UN ACCÈS EXCLUSIF POUR NOS NOUVEAUTÉS AINSI QUE DES RABAIS SURPRISE</P>
                 <br>
-                <form id="infolettreForm" action="php/inscrireInfolettre.php" method="POST">
+                <form id="infolettreForm" action="php/Forms/inscriptionInfolettre.php" method="POST">
                     <p class="error"><?php echo $_SESSION['errors'] ?? ''; ?></p>
                     <input id="email" name="email" type="text" placeholder="ADRESSE EMAIL"  value="<?php echo $_SESSION['old']['email'] ?? ''; ?>">
                     <input id="button" type="submit" value="S'INSCRIRE">

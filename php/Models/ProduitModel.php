@@ -9,22 +9,29 @@ class ProduitModel
         }
         public function getAllProduits()
         {
-                $sql = "SELECT * FROM `produits` ORDER BY `produits`.`type` DESC;";
-                //SELECT * FROM `produits` ORDER BY `produits`.`type` ASC
-                $result = $this->db->query($sql);
-                return $result->fetchAll(PDO::FETCH_ASSOC);
+            $sql = "SELECT * FROM `produits` ORDER BY `produits`.`type` DESC;";
+            //SELECT * FROM `produits` ORDER BY `produits`.`type` ASC
+            $result = $this->db->query($sql);
+            return $result->fetchAll(PDO::FETCH_ASSOC);
         }
         public function getProduitByType($type){
-        $sql = "SELECT * FROM `produits` WHERE `type` = :type;";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(':type', $type, PDO::PARAM_STR);
-        $stmt->execute();
+            $sql = "SELECT * FROM `produits` WHERE `type` = :type;";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':type', $type, PDO::PARAM_STR);
+            $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        public function getProduitsFiltrer($type,$prix,$taille,$couleur){
-
-
+        public function getProduitsFiltrer($type,$prixMin,$prixMax,$taille,$couleur){
+            $sql ="SELECT * FROM produits WHERE type LIKE :type AND (prix BETWEEN :prixMin AND :prixMax) AND couleur LIKE :couleur AND taille LIKE :taille;";;
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':type', $type, PDO::PARAM_STR);
+            $stmt->bindParam(':prixMin', $prixMin, PDO::PARAM_STR);
+            $stmt->bindParam(':prixMax', $prixMax, PDO::PARAM_STR);
+            $stmt->bindParam(':taille', $taille, PDO::PARAM_STR);
+            $stmt->bindParam(':couleur', $couleur, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         }
         public function getProduitById($id){
