@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,7 +20,8 @@
                 </div>
             <?php endif; ?>
             <p id="titre">CONNEXION</p>
-            <form action="php/connexionScript.php" id="connexionForm" method="POST">
+            <form action="php/Forms/connexionUser.php" id="connexionForm" method="POST">
+
                 <p class="error"><?php echo $_SESSION['errors']['email'] ?? ''; ?></p>
                 <input id="email" name="email" type="text" placeholder="ADRESSE COURRIEL" value="<?php echo $_SESSION['old']['email'] ?? ''; ?>">
                 <br>

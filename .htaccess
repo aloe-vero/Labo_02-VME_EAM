@@ -4,3 +4,6 @@ RewriteBase /Labo_02-VME_EAM_WEB/
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)$ /Labo_02-VME_EAM_WEB/index.php [QSA,L]
+
+php_flag display_startup_errors on
+php_flag display_errors on
