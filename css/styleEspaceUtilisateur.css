@@ -5,8 +5,8 @@ body {
 }
 
 html {
-  background:  url(../img/web/BackgroundUnicornv2Webp.webp) no-repeat center center
-    fixed;
+  background: url(../img/web/BackgroundUnicornv2Webp.webp) no-repeat center
+    center fixed;
   background-size: cover;
   height: 100%;
   cursor: url(../img/web/pink_unicorn_neon.png), auto;
@@ -95,6 +95,23 @@ nav > a:hover {
   font-size: 1.5rem;
   color: #5cf4c6;
   text-align: center;
+  margin: 0px;
+  margin-top: 8px;
+}
+
+#confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfb9ff;
+  color: white;
+  border: 2px solid white;
+  width: 100%;
+}
+
+#confirmation > p {
+  text-align: center;
 }
 
 #mdp,
@@ -104,11 +121,19 @@ nav > a:hover {
   height: 30px;
   width: 300px;
   padding-left: 10px;
-  margin: 15px;
+  margin: 13px;
 }
 
 input:hover {
   cursor: url(../img/web/purple_unicorn_neon.png), auto;
+}
+
+.error {
+  margin: 0px;
+  padding: 0px;
+  color: red;
+  font-size: 0.8rem;
+  margin-left: 15px;
 }
 
 #buttonModification {

@@ -5,8 +5,8 @@ body {
 }
 
 html {
-  background:  url(../img/web/BackgroundUnicornv2Webp.webp) no-repeat center center
-    fixed;
+  background: url(../img/web/BackgroundUnicornv2Webp.webp) no-repeat center
+    center fixed;
   background-size: cover;
   height: 100%;
   cursor: url(../img/web/pink_unicorn_neon.png), auto;
@@ -104,6 +104,22 @@ nav > a:hover {
   color: red;
   font-size: 0.8rem;
   margin-left: 15px;
+}
+
+#confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfb9ff;
+  color: white;
+  border: 2px solid white;
+  width: 100%;
+  margin-top: 40px;
+}
+
+#confirmation > p {
+  text-align: center;
 }
 
 input:hover {

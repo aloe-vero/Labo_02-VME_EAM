@@ -12,6 +12,11 @@
     <div class="container">
         <?php require 'php/Views/partials/header.php'; ?>
         <div class="connexion">
+        <?php if (isset($_SESSION['inscriptionConf'])): ?>
+                <div id="confirmation">
+                    <p><?php echo $_SESSION['inscriptionConf']; ?></p>
+                </div>
+            <?php endif; ?>
             <p id="titre">CONNEXION</p>
             <form action="php/connexionScript.php" id="connexionForm" method="POST">
                 <p class="error"><?php echo $_SESSION['errors']['email'] ?? ''; ?></p>
@@ -21,14 +26,14 @@
                 <input id="mdp" name="mdp" type="password" placeholder="MOT DE PASSE" value="<?php echo $_SESSION['old']['mdp'] ?? ''; ?>">
                 <br>
                 <input id="buttonConnexion" type="submit" value="CONNEXION">
-                <button type="button" id="buttonInscription" >S'INSCRIRE</button>
+                <button type="button" id="buttonInscription" onclick="window.location.href='inscription';" >S'INSCRIRE</button>
             </form>
         </div>
         <?php require 'php/Views/partials/footer.php'; ?>
         <?php
-        //Effacer les erreurs et les anciennes valeurs après affichage
         if (isset($_SESSION['errors'])) unset($_SESSION['errors']);
         if (isset($_SESSION['old'])) unset($_SESSION['old']);
+        if (isset($_SESSION['inscriptionConf'])) unset($_SESSION['inscriptionConf']);
          ?>
     </div>
 </body>

@@ -21,12 +21,12 @@ if(empty($email)){
 if(!empty($errors)){
     $_SESSION['errors'] = $errors;
     $_SESSION['old'] = $_POST;
-    header("Location: Views/infolettre.php");
+    header("Location: /Labo_02-VME_EAM_WEB/infolettre");
     exit();
 }
 
 
-$ac ->createAbonnement($email,1);
-header("Location: Views/infolettre.php");
+$ac ->createAbonnement($email);
 $_SESSION['confirmation'] = $messageConfirmation;
+header("Location: /Labo_02-VME_EAM_WEB/infolettre");
 exit();

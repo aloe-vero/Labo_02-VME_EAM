@@ -29,10 +29,9 @@ if (empty($errors)) {
     if ($utilisateur) {
         header('Location: /Labo_02-VME_EAM_WEB/utilisateur?id='.$utilisateur['id']);}
         exit();
-    }
-} else {
+    } else {
     $_SESSION['errors'] = $errors;
     $_SESSION['old'] = $_POST;
-    header("Location: Views/connexion.php");
+    header("Location: /Labo_02-VME_EAM_WEB/connexion");
     exit();
 }

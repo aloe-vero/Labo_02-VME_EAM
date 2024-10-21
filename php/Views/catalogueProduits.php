@@ -22,24 +22,25 @@ $produitView = new ProduitView();
 <div class="container">
     <?php require 'php/Views/partials/header.php'; ?>
         <p id="filtreTitre">Filtrer par</p>
+        <form action="" id="filtreForm" method="POST">
         <div class="filtre">
           <div class="liste">
           <p>Type</p>
           <select name="types" id="type-select">
             <option value="">--Choisissez une option--</option>
             <option value="cravate">Cravates</option>
-            <option value="t-shirt">T-shirts</option>
+            <option value="chemise">Chemises</option>
           </select>
           </div>
           <div class="liste">
           <p>Couleur</p>
           <select name="couleurs" id="color-select">
             <option value="">--Choisissez une option--</option>
-            <option value="bleu">Bleu</option>
-            <option value="mauve">Mauve</option>
-            <option value="rose">Rose</option>
-            <option value="blanc">Blanc</option>
-            <option value="vert">Vert</option>
+            <option value="Bleu">Bleu</option>
+            <option value="Mauve">Mauve</option>
+            <option value="Rose">Rose</option>
+            <option value="Blanc">Blanc</option>
+            <option value="Vert">Vert</option>
           </select>
           </div>
           <div class="liste">
@@ -66,9 +67,12 @@ $produitView = new ProduitView();
             <option value="150-200">150$-200$</option>
           </select>
           </div>
-          
+          <div id="button">
           <p>réinitialiser</p>
+          <input id="buttonFiltrer" type="submit" value="FILTRER">
+          </div>
         </div>
+        </form>
         <div class="listeProduits">
           <?php
           $produits = $produitController->getAllProduits();

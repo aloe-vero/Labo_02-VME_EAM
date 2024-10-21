@@ -14,8 +14,6 @@ if(isset($_GET['id'])){
     $id = $_GET['id'];
     $_SESSION['id'] = $id;
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -31,15 +29,23 @@ if(isset($_GET['id'])){
 <div class="container">
     <?php require 'php/Views/partials/header.php'; ?>
         <form class="connexion" action="php/modificationUser.php" method="post">
+        <?php if (isset($_SESSION['modificationConf'])): ?>
+                <div id="confirmation">
+                    <p><?php echo $_SESSION['modificationConf']; ?></p>
+                </div>
+        <?php endif; ?>
           <?php
-
-
           $user = $userController->getUtilisateurById($id);
           $userView->displayPageUser($user);
-
           ?>
         </form>
     <?php require 'php/Views/partials/footer.php'; ?>
+    <?php
+    //Effacer les erreurs et les anciennes valeurs après affichage
+    if (isset($_SESSION['errors'])) unset($_SESSION['errors']);
+    if (isset($_SESSION['post_data'])) unset($_SESSION['post_data']);
+    if (isset($_SESSION['modificationConf'])) unset($_SESSION['modificationConf']);
+    ?>
     </div>
 </body>
 </html>

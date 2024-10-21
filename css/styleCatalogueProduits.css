@@ -5,8 +5,8 @@ body {
 }
 
 html {
-  background:  url(../img/web/BackgroundUnicornv2Webp.webp) no-repeat center center
-    fixed;
+  background: url(../img/web/BackgroundUnicornv2Webp.webp) no-repeat center
+    center fixed;
   background-size: cover;
   height: 100%;
   cursor: url(../img/web/pink_unicorn_neon.png), auto;
@@ -87,25 +87,16 @@ nav > a:hover {
   font-weight: 600;
 }
 
-.filtre {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: start;
+#filtreForm {
   width: 100%;
 }
 
-.filtre > p {
-  margin: 0px;
-  margin-top: 10px;
-  margin-left: 30px;
-  color: #5cf4c6;
-  text-transform: uppercase;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 0.7rem;
-  align-self: center;
-  text-decoration: underline;
+.filtre {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: start;
+  align-items: start;
+  margin-left: 15px;
 }
 
 .liste {
@@ -113,7 +104,6 @@ nav > a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  margin-left: 15px;
 }
 
 .liste > p {
@@ -129,6 +119,43 @@ nav > a:hover {
 .liste > select {
   margin-left: 15px;
   height: 30px;
+  cursor: url(../img/web/purple_unicorn_neon.png), auto;
+}
+
+#button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+}
+
+#button > p {
+  margin: 0px;
+  margin-top: 10px;
+  margin-left: 15px;
+  color: #5cf4c6;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+#buttonFiltrer {
+  height: 34px;
+  width: 100px;
+  margin-left: 10px;
+  background-color: #b967ff;
+  border-radius: 8px;
+  border: 2px solid black;
+  box-shadow: 6px 6px black;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#buttonFiltrer:hover {
+  box-shadow: 2px 2px black;
+  cursor: url(../img/web/purple_unicorn_neon.png), auto;
 }
 
 .produit {

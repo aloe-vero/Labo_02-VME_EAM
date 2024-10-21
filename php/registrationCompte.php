@@ -11,6 +11,8 @@ require "Controllers/UtilisateurController.php";
 
 $uc = new UtilisateurController($conn);
 $errors = [];
+$messageInscription = "Inscription réussie !<br>
+Votre compte a été créé avec succès. Vous pouvez maintenant vous connecter.";
 
 
 if(empty($prenom)){
@@ -34,12 +36,13 @@ if(empty($password)){
 if(!empty($errors)){
     $_SESSION['errors'] = $errors;
     $_SESSION['old'] = $_POST;
-    header("Location: Views/inscription.php");
+    header("Location: /Labo_02-VME_EAM_WEB/inscription");
     exit();
 }
 
 //Si pas d'erreur on créer l'utilisateur
 $hash = password_hash($password, PASSWORD_DEFAULT);
 $uc ->createUtilisateur($nom, $prenom, $hash, $email);
+$_SESSION['inscriptionConf'] = $messageInscription;
 header("Location: /Labo_02-VME_EAM_WEB/connexion");
 exit();

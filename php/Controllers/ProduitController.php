@@ -19,6 +19,23 @@ class ProduitController
     public function getProduitByType($type){
         return $this->model->getProduitByType($type);
     }
+
+    public function getProduitByColor($couleur){
+        return $this->model->getProduitByColor($couleur);
+    }
+
+    public function getProduitBySize($taille){
+        return $this->model->getProduitBySize($taille);
+    }
+
+    public function getProduitByPrice($minPrix, $maxPrix){
+        return $this->model->getProduitByPrice($minPrix, $maxPrix);
+    }
+
+    public function getProduitsFiltrer($type,$taille,$couleur,$minPrix, $maxPrix){
+        return $this->model->getProduitsFiltrer($type,$taille,$couleur,$minPrix, $maxPrix);
+    }
+
     public function getProduitById($id){
         return $this->model->getProduitById($id);
     }

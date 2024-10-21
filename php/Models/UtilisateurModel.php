@@ -27,7 +27,7 @@ class UtilisateurModel {
         $result = $this->db->prepare($sql);
         $result->execute(["id" => $id]);
 
-        return $result->fetchAll(PDO::FETCH_ASSOC);
+        return $result->fetch(PDO::FETCH_ASSOC);
     }
     public function createUtilisateur($nom, $prenom, $password, $courriel) {
         $sql = "INSERT INTO utilisateurs (nom, prenom, password,courriel) VALUES (:nom , :prenom, :password,:courriel)";
